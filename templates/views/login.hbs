@@ -1,0 +1,84 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Log in - remind me</title>
+    <link rel="stylesheet" href="css/login.css" media="all" />
+  </head>
+  <body class="font-sans subpixel-antialiased login">
+    <div class="container mx-auto">
+      <header
+        class="flex items-center justify-between px-8 py-5 font-mont mx-auto"
+      >
+        <a
+          href="index.hbs"
+          class="flex items-center w-[105px] h-[36px] sm:w-[140px] sm:h-[48px]"
+        >
+          <!-- Logo SVG -->
+        </a>
+        <div
+          id="guest"
+          class="flex items-center text-xs sm:text-sm md:text-normal font-normal"
+        >
+          <a
+            class="dropdown-reveal text-teal px-4 block cursor-pointer font-mont font-semibold"
+            href="login.hbs"
+          >Log in</a>
+          <a
+            class="bg-teal text-white px-3 py-2 sm:px-5 sm:py-3 rounded shadow sm-cta-button"
+            href="signup.hbs"
+          >Sign up</a>
+        </div>
+      </header>
+    </div>
+
+    <main class="bg-facets">
+      <div class="container mx-auto px-4 md:px-8 pt-8">
+        <div class="lg:flex align-center justify-center items-center">
+          <div class="lg:w-1/2 xl:w-1/2 modal_box px-4 md:px-16">
+            <div class="text-3xl font-mont mb-4">Log in</div>
+            <form
+              action="/login"
+              method="post"
+              class="font-mont"
+              id="login_form"
+            >
+              <label for="credentials_identity">Email address</label>
+              <div class="input mb-4">
+                <input
+                  autocapitalize="off"
+                  type="email"
+                  name="email"
+                  id="credentials_identity"
+                />
+              </div>
+              <label for="credentials_password">Password</label>
+              <div class="input mb-4">
+                <input
+                  type="password"
+                  name="password"
+                  id="credentials_password"
+                />
+              </div>
+              <div class="py-4">
+                <input
+                  type="submit"
+                  name="commit"
+                  value="Log in"
+                  class="cta-button block font-mont rounded bg-teal-darker text-white shadow px-4 py-2 text-center w-full"
+                />
+              </div>
+            </form>
+            <a
+              class="block text-center font-mont font-semibold text-teal-darker py-2"
+              href="password_reset.html"
+            >Forgot your password?</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=yes"
+    />
+    <title>Sign up - remind me</title>
+    <link rel="stylesheet" href="css/signup.css" media="all" />
+  </head>
+
+  <body id="fat_rabbit">
+    <div class="wrapper">
+      <div class="toppad">&nbsp;</div>
+      <div class="flex_container blank_page clearfix">
+        <a href="/"><img
+            height="200"
+            width="200"
+            class="envelope"
+            src="logoooo.jpeg"
+          /></a>
+        <div class="content-block">
+          <h2>Introduce yourself</h2>
+
+          <form
+            class="form-stacked"
+            action="/signup"
+            method="post"
+            id="new_user"
+            {{! onsubmit="saveToLocalStorage(); return false;" }}
+          >
+            <div style="font-size: 24px; line-height: 140%; margin: 16px 0 5px">
+              Hi there! My name is
+            </div>
+            <input
+              tabindex="1"
+              autocomplete="off"
+              style="font-size: 32px; height: 42px"
+              oninput="showSecondaryFields()"
+              type="text"
+              name="full_name"
+              id="user_name"
+            />
+
+            <div class="secondary_fields" style="display: none">
+              <div>
+                Here’s my
+                <strong>email address</strong>:
+                <br />
+                <input tabindex="2" type="email" name="email" id="user_email" />
+              </div>
+
+              <div class="secondary_fields" style="display: none">
+                And here’s my
+                <strong>password</strong>:
+                <br />
+                <input
+                  tabindex="3"
+                  type="password"
+                  name="password"
+                  id="user_password"
+                />
+              </div>
+            </div>
+
+            <div style="position: relative; margin-top: -3px">
+              <input
+                type="submit"
+                name="commit"
+                value="Sign me up!"
+                class="btn btn-large btn-orange"
+                style="padding: 11px 15px"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showSecondaryFields() { const nameField =
+      document.getElementById("user_name").value.trim(); const secondaryFields =
+      document.querySelectorAll(".secondary_fields");
+      secondaryFields.forEach((field) => { field.style.display = nameField ?
+      "block" : "none"; }); } function validateEmail(email) { const emailRegex =
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; const popularDomains =
+      [ "gmail.com", "yahoo.com", "outlook.com", "hotmail.com", "icloud.com",
+      "aol.com", "zoho.com" ]; if (!emailRegex.test(email)) { return false; }
+      const domain = email.split("@")[1].toLowerCase(); return
+      popularDomains.includes(domain); }
+    </script>
+  </body>
+</html>

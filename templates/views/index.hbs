@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <!-- Mirrored from www.splitwise.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Oct 2024 12:53:57 GMT -->
+  <!-- Added by HTTrack --><meta
+    http-equiv="content-type"
+    content="text/html;charset=utf-8"
+  /><!-- /Added by HTTrack -->
+  <head>
+    <script>
+      var _rollbarConfig = {
+        accessToken: "e6f02c3ea02843769f37758afcce81ae",
+        captureUncaught: true,
+        captureUnhandledRejections: true,
+        payload: {
+          environment: "production",
+          person: { id: null, username: null, email: null },
+        },
+        ignoredMessages: [
+          "\\$ is not defined",
+          "Backbone is not defined",
+          'Failed to resolve module specifier "(application|motel)"\\. Relative references must start with',
+          "Error resolving module specifier “(application|motel)”\\. Relative module specifiers must start with",
+          "Error resolving module specifier: (application|motel)",
+        ],
+        hostWhiteList: ["splitwise.com", "cloudfront.net"],
+      };
+      // Rollbar Snippet
+      !(function (r) {
+        var e = {};
+        function o(n) {
+          if (e[n]) return e[n].exports;
+          var t = (e[n] = { i: n, l: !1, exports: {} });
+          return r[n].call(t.exports, t, t.exports, o), (t.l = !0), t.exports;
+        }
+        (o.m = r),
+          (o.c = e),
+          (o.d = function (r, e, n) {
+            o.o(r, e) ||
+              Object.defineProperty(r, e, { enumerable: !0, get: n });
+          }),
+          (o.r = function (r) {
+            "undefined" != typeof Symbol &&
+              Symbol.toStringTag &&
+              Object.defineProperty(r, Symbol.toStringTag, { value: "Module" }),
+              Object.defineProperty(r, "__esModule", { value: !0 });
+          }),
+          (o.t = function (r, e) {
+            if ((1 & e && (r = o(r)), 8 & e)) return r;
+            if (4 & e && "object" == typeof r && r && r.__esModule) return r;
+            var n = Object.create(null);
+            if (
+              (o.r(n),
+              Object.defineProperty(n, "default", { enumerable: !0, value: r }),
+              2 & e && "string" != typeof r)
+            )
+              for (var t in r)
+                o.d(
+                  n,
+                  t,
+                  function (e) {
+                    return r[e];
+                  }.bind(null, t)
+                );
+            return n;
+          }),
+          (o.n = function (r) {
+            var e =
+              r && r.__esModule
+                ? function () {
+                    return r.default;
+                  }
+                : function () {
+                    return r;
+                  };
+            return o.d(e, "a", e), e;
+          }),
+          (o.o = function (r, e) {
+            return Object.prototype.hasOwnProperty.call(r, e);
+          }),
+          (o.p = ""),
+          o((o.s = 0));
+      })([
+        function (r, e, o) {
+          "use strict";
+          var n = o(1),
+            t = o(5);
+          (_rollbarConfig = _rollbarConfig || {}),
+            (_rollbarConfig.rollbarJsUrl =
+              _rollbarConfig.rollbarJsUrl ||
+              "https://cdn.rollbar.com/rollbarjs/refs/tags/v2.26.2/rollbar.min.js"),
+            (_rollbarConfig.async =
+              void 0 === _rollbarConfig.async || _rollbarConfig.async);
+          var a = n.setupShim(window, _rollbarConfig),
+            l = t(_rollbarConfig);
+          (window.rollbar = n.Rollbar),
+            a.loadFull(
+              window,
+              document,
+              !_rollbarConfig.async,
+              _rollbarConfig,
+              l
+            );
+        },
+        function (r, e, o) {
+          "use strict";
+          var n = o(2),
+            t = o(3);
+          function a(r) {
+            return function () {
+              try {
+                return r.apply(this, arguments);
+              } catch (r) {
+                try {
+                  console.error("[Rollbar]: Internal error", r);
+                } catch (r) {}
+              }
+            };
+          }
+          var l = 0;
+          function i(r, e) {
+            (this.options = r), (this._rollbarOldOnError = null);
+            var o = l++;
+            (this.shimId = function () {
+              return o;
+            }),
+              "undefined" != typeof window &&
+                window._rollbarShims &&
+                (window._rollbarShims[o] = { handler: e, messages: [] });
+          }
+          var s = o(4),
+            d = function (r, e) {
+              return new i(r, e);
+            },
+            c = function (r) {
+              return new s(d, r);
+            };
+          function u(r) {
+            return a(function () {
+              var e = this,
+                o = Array.prototype.slice.call(arguments, 0),
+                n = { shim: e, method: r, args: o, ts: new Date() };
+              window._rollbarShims[this.shimId()].messages.push(n);
+            });
+          }
+          (i.prototype.loadFull = function (r, e, o, n, t) {
+            var l = !1,
+              i = e.createElement("script"),
+              s = e.getElementsByTagName("script")[0],
+              d = s.parentNode;
+            (i.crossOrigin = ""),
+              (i.src = n.rollbarJsUrl),
+              o || (i.async = !0),
+              (i.onload = i.onreadystatechange =
+                a(function () {
+                  if (
+                    !(
+                      l ||
+                      (this.readyState &&
+                        "loaded" !== this.readyState &&
+                        "complete" !== this.readyState)
+                    )
+                  ) {
+                    i.onload = i.onreadystatechange = null;
+                    try {
+                      d.removeChild(i);
+                    } catch (r) {}
+                    (l = !0),
+                      (function () {
+                        var e;
+                        if (void 0 === r._rollbarDidLoad) {
+                          e = new Error("rollbar.js did not load");
+                          for (
+                            var o, n, a, l, i = 0;
+                            (o = r._rollbarShims[i++]);
+
+                          )
+                            for (o = o.messages || []; (n = o.shift()); )
+                              for (a = n.args || [], i = 0; i < a.length; ++i)
+                                if ("function" == typeof (l = a[i])) {
+                                  l(e);
+                                  break;
+                                }
+                        }
+                        "function" == typeof t && t(e);
+                      })();
+                  }
+                })),
+              d.insertBefore(i, s);
+          }),
+            (i.prototype.wrap = function (r, e, o) {
+              try {
+                var n;
+                if (
+                  ((n =
+                    "function" == typeof e
+                      ? e
+                      : function () {
+                          return e || {};
+                        }),
+                  "function" != typeof r)
+                )
+                  return r;
+                if (r._isWrap) return r;
+                if (
+                  !r._rollbar_wrapped &&
+                  ((r._rollbar_wrapped = function () {
+                    o && "function" == typeof o && o.apply(this, arguments);
+                    try {
+                      return r.apply(this, arguments);
+                    } catch (o) {
+                      var e = o;
+                      throw (
+                        (e &&
+                          ("string" == typeof e && (e = new String(e)),
+                          (e._rollbarContext = n() || {}),
+                          (e._rollbarContext._wrappedSource = r.toString()),
+                          (window._rollbarWrappedError = e)),
+                        e)
+                      );
+                    }
+                  }),
+                  (r._rollbar_wrapped._isWrap = !0),
+                  r.hasOwnProperty)
+                )
+                  for (var t in r)
+                    r.hasOwnProperty(t) && (r._rollbar_wrapped[t] = r[t]);
+                return r._rollbar_wrapped;
+              } catch (e) {
+                return r;
+              }
+            });
+          for (
+            var p =
+                "log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(
+                  ","
+                ),
+              f = 0;
+            f < p.length;
+            ++f
+          )
+            i.prototype[p[f]] = u(p[f]);
+          r.exports = {
+            setupShim: function (r, e) {
+              if (r) {
+                var o = e.globalAlias || "Rollbar";
+                if ("object" == typeof r[o]) return r[o];
+                (r._rollbarShims = {}), (r._rollbarWrappedError = null);
+                var l = new c(e);
+                return a(function () {
+                  e.captureUncaught &&
+                    ((l._rollbarOldOnError = r.onerror),
+                    n.captureUncaughtExceptions(r, l, !0),
+                    e.wrapGlobalEventHandlers && t(r, l, !0)),
+                    e.captureUnhandledRejections &&
+                      n.captureUnhandledRejections(r, l, !0);
+                  var a = e.autoInstrument;
+                  return (
+                    !1 !== e.enabled &&
+                      (void 0 === a ||
+                        !0 === a ||
+                        (function (r) {
+                          return !(
+                            "object" != typeof r ||
+                            (void 0 !== r.page && !r.page)
+                          );
+                        })(a)) &&
+                      r.addEventListener &&
+                      (r.addEventListener("load", l.captureLoad.bind(l)),
+                      r.addEventListener(
+                        "DOMContentLoaded",
+                        l.captureDomContentLoaded.bind(l)
+                      )),
+                    (r[o] = l),
+                    l
+                  );
+                })();
+              }
+            },
+            Rollbar: c,
+          };
+        },
+        function (r, e, o) {
+          "use strict";
+          function n(r, e, o, n) {
+            r._rollbarWrappedError &&
+              (n[4] || (n[4] = r._rollbarWrappedError),
+              n[5] || (n[5] = r._rollbarWrappedError._rollbarContext),
+              (r._rollbarWrappedError = null));
+            var t = e.handleUncaughtException.apply(e, n);
+            o && o.apply(r, n),
+              "anonymous" === t && (e.anonymousErrorsPending += 1);
+          }
+          r.exports = {
+            captureUncaughtExceptions: function (r, e, o) {
+              if (r) {
+                var t;
+                if ("function" == typeof e._rollbarOldOnError)
+                  t = e._rollbarOldOnError;
+                else if (r.onerror) {
+                  for (t = r.onerror; t._rollbarOldOnError; )
+                    t = t._rollbarOldOnError;
+                  e._rollbarOldOnError = t;
+                }
+                e.handleAnonymousErrors();
+                var a = function () {
+                  var o = Array.prototype.slice.call(arguments, 0);
+                  n(r, e, t, o);
+                };
+                o && (a._rollbarOldOnError = t), (r.onerror = a);
+              }
+            },
+            captureUnhandledRejections: function (r, e, o) {
+              if (r) {
+                "function" == typeof r._rollbarURH &&
+                  r._rollbarURH.belongsToShim &&
+                  r.removeEventListener("unhandledrejection", r._rollbarURH);
+                var n = function (r) {
+                  var o, n, t;
+                  try {
+                    o = r.reason;
+                  } catch (r) {
+                    o = void 0;
+                  }
+                  try {
+                    n = r.promise;
+                  } catch (r) {
+                    n =
+                      "[unhandledrejection] error getting `promise` from event";
+                  }
+                  try {
+                    (t = r.detail),
+                      !o && t && ((o = t.reason), (n = t.promise));
+                  } catch (r) {}
+                  o ||
+                    (o =
+                      "[unhandledrejection] error getting `reason` from event"),
+                    e &&
+                      e.handleUnhandledRejection &&
+                      e.handleUnhandledRejection(o, n);
+                };
+                (n.belongsToShim = o),
+                  (r._rollbarURH = n),
+                  r.addEventListener("unhandledrejection", n);
+              }
+            },
+          };
+        },
+        function (r, e, o) {
+          "use strict";
+          function n(r, e, o) {
+            if (e.hasOwnProperty && e.hasOwnProperty("addEventListener")) {
+              for (
+                var n = e.addEventListener;
+                n._rollbarOldAdd && n.belongsToShim;
+
+              )
+                n = n._rollbarOldAdd;
+              var t = function (e, o, t) {
+                n.call(this, e, r.wrap(o), t);
+              };
+              (t._rollbarOldAdd = n),
+                (t.belongsToShim = o),
+                (e.addEventListener = t);
+              for (
+                var a = e.removeEventListener;
+                a._rollbarOldRemove && a.belongsToShim;
+
+              )
+                a = a._rollbarOldRemove;
+              var l = function (r, e, o) {
+                a.call(this, r, (e && e._rollbar_wrapped) || e, o);
+              };
+              (l._rollbarOldRemove = a),
+                (l.belongsToShim = o),
+                (e.removeEventListener = l);
+            }
+          }
+          r.exports = function (r, e, o) {
+            if (r) {
+              var t,
+                a,
+                l =
+                  "EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(
+                    ","
+                  );
+              for (t = 0; t < l.length; ++t)
+                r[(a = l[t])] && r[a].prototype && n(e, r[a].prototype, o);
+            }
+          };
+        },
+        function (r, e, o) {
+          "use strict";
+          function n(r, e) {
+            (this.impl = r(e, this)),
+              (this.options = e),
+              (function (r) {
+                for (
+                  var e = function (r) {
+                      return function () {
+                        var e = Array.prototype.slice.call(arguments, 0);
+                        if (this.impl[r])
+                          return this.impl[r].apply(this.impl, e);
+                      };
+                    },
+                    o =
+                      "log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(
+                        ","
+                      ),
+                    n = 0;
+                  n < o.length;
+                  n++
+                )
+                  r[o[n]] = e(o[n]);
+              })(n.prototype);
+          }
+          (n.prototype._swapAndProcessMessages = function (r, e) {
+            var o, n, t;
+            for (this.impl = r(this.options); (o = e.shift()); )
+              (n = o.method),
+                (t = o.args),
+                this[n] &&
+                  "function" == typeof this[n] &&
+                  ("captureDomContentLoaded" === n || "captureLoad" === n
+                    ? this[n].apply(this, [t[0], o.ts])
+                    : this[n].apply(this, t));
+            return this;
+          }),
+            (r.exports = n);
+        },
+        function (r, e, o) {
+          "use strict";
+          r.exports = function (r) {
+            return function (e) {
+              if (!e && !window._rollbarInitialized) {
+                for (
+                  var o,
+                    n,
+                    t = (r = r || {}).globalAlias || "Rollbar",
+                    a = window.rollbar,
+                    l = function (r) {
+                      return new a(r);
+                    },
+                    i = 0;
+                  (o = window._rollbarShims[i++]);
+
+                )
+                  n || (n = o.handler),
+                    o.handler._swapAndProcessMessages(l, o.messages);
+                (window[t] = n), (window._rollbarInitialized = !0);
+              }
+            };
+          };
+        },
+      ]);
+      // End Rollbar Snippet
+    </script>
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-22826239-1"
+    ></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-22826239-1", { page_path: "/index" });
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="referrer" content="origin" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="apple-itunes-app"
+      content="app-id=458023433, app-argument=splitwise://open"
+    />
+    <meta
+      name="description"
+      content="Splitwise is a free tool for friends and roommates to track bills and other shared expenses, so that everyone gets paid back. On the web, iPhone, and Android!"
+    />
+    <meta name="color-scheme" content="light only" />
+
+    <meta
+      property="og:description"
+      content="Splitwise is a free tool for friends and roommates to track bills and other shared expenses, so that everyone gets paid back. On the web, iPhone, and Android!"
+    />
+    <meta property="og:title" content="Split expenses with friends." />
+    <meta
+      property="og:image"
+      content="https://assets.splitwise.com/assets/core/open-graph-preview-c1b55b0dc7c2b2d5bd6f40bbe34989f3eb2317843246727606cf3e96ee254609.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://assets.splitwise.com/assets/core/open-graph-preview-c1b55b0dc7c2b2d5bd6f40bbe34989f3eb2317843246727606cf3e96ee254609.png"
+    />
+    <meta property="og:image:alt" content="Splitwise logo" />
+    <meta property="og:site_name" content="Remind Me" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.remindme.com/" />
+    <meta property="fb:app_id" content="293864780643203" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:locale:alternate" content="de" />
+    <meta property="og:locale:alternate" content="es" />
+    <meta property="og:locale:alternate" content="fr" />
+    <meta property="og:locale:alternate" content="id" />
+    <meta property="og:locale:alternate" content="it" />
+    <meta property="og:locale:alternate" content="ja" />
+    <meta property="og:locale:alternate" content="nl" />
+    <meta property="og:locale:alternate" content="pt-BR" />
+    <meta property="og:locale:alternate" content="pt-PT" />
+    <meta property="og:locale:alternate" content="sv" />
+    <meta property="og:locale:alternate" content="th" />
+    <meta property="og:locale:alternate" content="emoji" />
+
+    <meta name="twitter:card" content="app" />
+    <meta
+      name="twitter:description"
+      content="Splitwise is a free tool for friends and roommates to track bills and other shared expenses, so that everyone gets paid back. On the web, iPhone, and Android!"
+    />
+    <meta name="twitter:site" content="@splitwise" />
+    <meta name="twitter:app:name:iphone" content="Splitwise" />
+    <meta name="twitter:app:id:iphone" content="458023433" />
+    <meta name="twitter:app:name:googleplay" content="Splitwise" />
+    <meta
+      name="twitter:app:id:googleplay"
+      content="com.Splitwise.SplitwiseMobile"
+    />
+
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta
+      name="csrf-token"
+      content="BgbqsTsu9vAC0ZzGzVnFYAPBou9nJfVufyYodz2-ifLjlLY3M3CrJ9rPgQP1g3A4l6tv0goZKpWfYKzfLKuMHw"
+    />
+
+    <link rel="stylesheet" href="css/style.css" media="all" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Montserrat:400,600,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="apple-touch-icon-precomposed.png"
+    />
+
+    <link rel="canonical" href="index.hbs" />
+
+    <title>Remind Me</title>
+
+    <script type="importmap" data-turbo-track="reload">
+      {
+        "imports": {
+          "application": "https://assets.splitwise.com/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js",
+          "motel": "https://assets.splitwise.com/assets/motel-9680a85d72b6e12cc54519efa8506651b42f5a043ce30bc3c73bf48ba8af53a7.js",
+          "motel/motel": "https://assets.splitwise.com/assets/motel/motel-c75db22451adcb1f5d0420f4cad79acafbb541772a3771da2be4cca996d1fd6d.js",
+          "charts": "https://assets.splitwise.com/assets/charts-1f38e9276acc590cf23ffc67fb3514a8af03f73a7a02a68981883c97934a1d9f.js",
+          "chartkick": "https://assets.splitwise.com/assets/chartkick-338375253bd80b2f0da7e8b98ae0194bb84ea647cae7d3a2fec94a8cc15f7578.js",
+          "Chart.bundle": "https://assets.splitwise.com/assets/Chart.bundle-93c2270a882e090c5eaceec7a74e8cc7c4e02f7dde0951148b83f9a0be5c8dbb.js",
+          "@rails/ujs": "https://assets.splitwise.com/assets/@rails--ujs-57169a955c1531a628bf30afac33de3edd70cec551c6262363e9915d750c3f6d.js",
+          "@github/webauthn-json/browser-ponyfill": "https://assets.splitwise.com/assets/@github--webauthn-json--browser-ponyfill-c940892aa19f632b24b0ce6709282eceeed185222b9fda7902b0ec9bd72ce954.js"
+        }
+      }
+    </script>
+
+    <script
+      src="https://assets.splitwise.com/assets/es-module-shims.min-f6e61a1a9f41be4f7947efa52fef6f0b9b265d4a397ce46d39a09e1c1d044578.js"
+      async="async"
+      data-turbo-track="reload"
+    ></script>
+    <script type="module">
+      import "application";
+    </script>
+    <script type="module">
+      import "motel";
+    </script>
+  </head>
+  <body class="font-sans subpixel-antialiased" id="landing-page">
+    <div class="container mx-auto">
+      <header
+        class="flex items-center justify-between px-8 py-5 font-mont mx-auto"
+      >
+        <a
+          href="index.hbs"
+          class="flex items-center w-[105px] h-[36px] sm:w-[140px] sm:h-[48px]"
+        >
+          <div class="logo-container">
+            <a href="#">
+    <img src="logoooo.jpeg" alt="logo" class="logo">
+</a>
+          </div>
+        </a>
+
+        <div
+          id="guest"
+          class="flex items-center text-xs sm:text-sm md:text-normal font-normal"
+        >
+          <div class="dropdown relative">
+            <a
+              class="dropdown-reveal text-teal px-4 block cursor-pointer font-mont font-semibold"
+              href="login.hbs"
+              >Log in</a
+            >
+          </div>
+          <a
+            class="bg-teal text-white px-3 py-2 sm:px-5 sm:py-3 rounded shadow sm-cta-button"
+            href="signup.hbs"
+            >Sign up</a
+          >
+        </div>
+      </header>
+    </div>
+
+    <main class="bg-facets">
+      <div class="container mx-auto px-8">
+        <div class="lg:flex">
+          <div class="hidden xl:w-1/12 xl:block"></div>
+          <div class="lg:w-5/12 xl:w-4/12">
+            <div class="lg:flex lg:flex-col lg:h-full lg:justify-center">
+              <h1
+                class="text-center text-3xl lg:text-left lg:text-4xl text-charcoal font-bold leading-tight pt-8 lg:pt-0"
+              >
+                <span class="text-swap-plane">
+                  Less stress when sharing expenses
+                  <span class="text-plane text-teal">on trips.</span>
+                </span>
+                <span class="text-swap-house hidden">
+                  Less stress when sharing expenses
+                  <span class="text-house text-purple">with housemates.</span>
+                </span>
+                <span class="text-swap-heart hidden">
+                  Less stress when sharing expenses
+                  <span class="text-heart text-red">with your partner.</span>
+                </span>
+                <span class="text-swap-any hidden">
+                  Less stress when sharing expenses
+                  <span class="text-any text-teal">with anyone.</span>
+                </span>
+              </h1>
+              <div class="hidden lg:block">
+                <p class="text-lg my-6 max-w-xs">
+                  Keep track of your shared expenses and balances with
+                  housemates, trips, groups, friends, and family.
+                </p>
+                <a
+                  class="pad font-mont inline-block text-white rounded bg-teal shadow px-16 py-4"
+                  id="cta-button"
+                  href="signup.hbs"
+                  >Sign up</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-7/12">
+            <div class="w-64 md:w-100 lg:w-full xl:w-500 mx-auto">
+              <img src="image1.jpeg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center pb-4 px-8 lg:hidden">
+        <a
+          class="bg-teal text-white px-6 py-3 inline-block mb-4 rounded shadow font-mont font-semibold"
+          id="mobile-cta"
+          href="mobile.html"
+          >Download the app</a
+        >
+        <p class="mx-auto text-lg">
+          Keep track of your shared expenses and balances with housemates,
+          trips, groups, friends, and family.
+        </p>
+        <p class="text-sm flex h-4 items-center justify-center my-6 md:my-6">
+          Free for
+          <a
+            class="inline-flex items-center h-4"
+            href="https://apps.apple.com/us/app/splitwise/id458023433"
+          >
+            <svg
+              class="inline fill-current mx-1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="15"
+            >
+              <path
+                d="M10.628 7.968c.03 2.268 2.064 3.033 2.064 3.062-.03.057-.324 1.077-1.091 2.126-.649.936-1.327 1.815-2.389 1.843-1.032 0-1.386-.595-2.566-.595-1.21 0-1.563.567-2.566.595-1.003.029-1.77-.992-2.448-1.9C.305 11.23-.728 7.827.659 5.53a3.877 3.877 0 0 1 3.215-1.871c1.032-.029 1.976.652 2.595.652.62 0 1.77-.794 2.979-.68.501 0 1.947.17 2.86 1.474-.058.056-1.71.964-1.68 2.864zM8.68 2.41c-.56.624-1.475 1.106-2.33 1.05-.118-.851.325-1.759.826-2.326C7.737.51 8.71.028 9.477 0c.118.879-.265 1.758-.796 2.41z"
+              />
+            </svg>
+            <span>iPhone</span> </a
+          >,
+          <a
+            class="inline-flex items-center h-4"
+            href="https://play.google.com/store/apps/details?id=com.Splitwise.SplitwiseMobile"
+          >
+            <svg
+              class="inline fill-current mx-1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="16"
+            >
+              <path
+                d="M2.68 12a.67.67 0 0 0 .67.667h.671V15c0 .553.449 1 1.005 1 .556 0 1.005-.447 1.005-1v-2.333h1.34V15c0 .553.45 1 1.006 1s1.005-.447 1.005-1v-2.333h.67c.369 0 .67-.3.67-.667V5.334h-8.04V12zM1.006 5.334C.45 5.334 0 5.78 0 6.334V11a1 1 0 0 0 1.005 1 1 1 0 0 0 1.005-1V6.334c0-.553-.449-1-1.005-1zm11.393 0c-.556 0-1.005.447-1.005 1V11a1 1 0 0 0 1.005 1 1 1 0 0 0 1.005-1V6.334c0-.553-.449-1-1.005-1zM9.068 1.44l.874-.87a.33.33 0 0 0 0-.47.335.335 0 0 0-.473 0l-.991.983a4.012 4.012 0 0 0-3.562.003L3.92.097a.335.335 0 0 0-.472 0 .33.33 0 0 0 0 .47l.878.874A3.998 3.998 0 0 0 2.68 4.667h8.042a3.98 3.98 0 0 0-1.656-3.226zm-.691 1.892c.185 0 .335-.15.335-.333a.334.334 0 0 0-.335-.333.334.334 0 0 0-.335.333c0 .184.15.333.335.333zm-3.35 0c.184 0 .334-.15.334-.333a.334.334 0 0 0-.335-.333.334.334 0 0 0-.335.333c0 .184.15.333.335.333z"
+              />
+            </svg>
+            <span>Android</span> </a
+          >,&nbsp;and web.
+        </p>
+      </div>
+    </main>
+
+    <div class="lg:flex lg:flex-wrap">
+      <div
+        class="bg-facets w-full text-white pt-8 bg-charcoal lg:h-landing-feature lg:w-1/2"
+      >
+        <div class="flex flex-col align-center justify-between h-full">
+          <div>
+            <h1 class="text-2xl text-center font-mont">Track balances</h1>
+            <p
+              class="text-center block mx-auto px-8 mt-2 text-lg mb-9 max-w-95"
+            >
+              Keep track of shared expenses, balances, and who owes who.
+            </p>
+          </div>
+          <img
+            srcset="
+              https://assets.splitwise.com/assets/home_page/fixtures/asset1@2x-b7225a262a58f40d591ad168dded30b61f6c6e0daaba1b2e83f1e8f7263be050.png 2x,
+              https://assets.splitwise.com/assets/home_page/fixtures/asset1@3x-3ec75b2f0dc12f4ecd4cb8464a436b292e9284891f383adb2de851818226089a.png 3x
+            "
+            class="mx-auto w-65 lg:w-81"
+            src="https://assets.splitwise.com/assets/home_page/fixtures/asset1-b7eef5474a87c4fa99310094be435f18d83a7e87427b0d035cf9fd5382a92e12.png"
+          />
+        </div>
+      </div>
+      <div
+        class="bg-facets w-full text-white pt-8 bg-teal h-sm-landing-feature lg:h-landing-feature lg:w-1/2"
+      >
+        <div class="flex flex-col align-center justify-between h-full">
+          <div>
+            <h1 class="text-2xl text-center">Organize expenses</h1>
+            <p
+              class="text-center block mx-auto px-8 mt-2 text-lg mb-9 max-w-95"
+            >
+              Split expenses with any group: trips, housemates, friends, and
+              family.
+            </p>
+          </div>
+          <img
+            srcset="
+              https://assets.splitwise.com/assets/home_page/fixtures/asset2@2x-1a032de8cdb5bd11e5c3cd37ce08391497ac0f14f2bba61987be82e3421ba42c.png 2x,
+              https://assets.splitwise.com/assets/home_page/fixtures/asset2@3x-6d91a43abc00622629c01c4ef13217d7b7de571529b1bb43bff21b9e949a315b.png 3x
+            "
+            class="mx-auto w-65 lg:w-81"
+            src="https://assets.splitwise.com/assets/home_page/fixtures/asset2-195991789f28e51ed734fbee4b87bd1fe1d54363aab190b610c79b7e03cf665a.png"
+          />
+        </div>
+      </div>
+      <div
+        class="bg-facets w-full text-white pt-8 bg-orange lg:h-landing-feature lg:w-1/2"
+      >
+        <div class="flex flex-col align-center justify-between h-full">
+          <div>
+            <h1 class="text-2xl text-center">Add expenses easily</h1>
+            <p
+              class="text-center block mx-auto px-8 mt-2 text-lg mb-9 max-w-95"
+            >
+              Quickly add expenses on the go before you forget who paid.
+            </p>
+          </div>
+          <img
+            srcset="
+              https://assets.splitwise.com/assets/home_page/fixtures/asset3@2x-233776b3d1a29f11a498cb836488ad04a552788bb66c0f4e1fc0c5d2b0f4f69a.png 2x,
+              https://assets.splitwise.com/assets/home_page/fixtures/asset3@3x-80fe34ac73f8450deb229fb8f6319b6d61abdb7bca25fb8d53bf84fcfe73236e.png 3x
+            "
+            class="mx-auto w-65 lg:w-81"
+            src="https://assets.splitwise.com/assets/home_page/fixtures/asset3-d1bdfeae0e4d9a89351d416b3991160e38c2391cd0db26f6c6cb0331649fa92c.png"
+          />
+        </div>
+      </div>
+      <div
+        class="bg-facets w-full text-white pt-8 bg-charcoal lg:h-landing-feature lg:w-1/2"
+      >
+        <div class="flex flex-col align-center justify-between h-full">
+          <div>
+            <h1 class="text-2xl text-center">Pay friends back</h1>
+            <p
+              class="text-center block mx-auto px-8 mt-2 text-lg mb-9 max-w-95"
+            >
+              Settle up with a friend and record any cash or online payment.
+            </p>
+          </div>
+          <img
+            srcset="
+              https://assets.splitwise.com/assets/home_page/fixtures/asset4@2x-b24f9dbf919621d81e506157b33c60745aa32509452eba4c8f2482ae17d2fd47.png 2x,
+              https://assets.splitwise.com/assets/home_page/fixtures/asset4@3x-e82634292f79acf0cb1b5c7079b8e6f3ecdcd971b0110a6725319b702f64d048.png 3x
+            "
+            class="mx-auto w-65 lg:w-81"
+            src="https://assets.splitwise.com/assets/home_page/fixtures/asset4-3abaa95d20d133c1948fa1e3d8047890c3d7e274130cfcba5c2a304f74aa1353.png"
+          />
+        </div>
+      </div>
+
+      <div
+        class="bg-facets w-full text-white pt-8 h-landing-feature bg-purple flex-col lg:flex-row flex justify-between lg:flex"
+      >
+        <div class="lg:w-1/2">
+          <div class="lg:flex lg:flex-col lg:justify-center lg:h-full">
+            <h1 class="text-2xl text-center">Get even more with PRO</h1>
+            <p
+              class="text-center block mx-6 mt-2 text-lg mb-6 max-w-95 mx-auto"
+            >
+              Get even more organized with receipt scanning, charts and graphs,
+              currency conversion, and more!
+            </p>
+            <div class="flex justify-center mb-4">
+              <a
+                class="mx-auto px-10 py-3 bg-charcoal-trans border border-white shadow text-white font-mont font-semibold rounded sm-cta-button"
+                href="signup.hbs"
+                >Sign up</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/2">
+          <div class="lg:flex lg:flex-col lg:justify-end lg:h-full">
+            <img
+              srcset="
+                https://assets.splitwise.com/assets/home_page/fixtures/asset5@2x-dc95398d4023e88e07a5242df269f7a5f7c738b40fae988281ddd480b0fc6e2d.png 2x,
+                https://assets.splitwise.com/assets/home_page/fixtures/asset5@3x-b02c97c4a857a6daff9664f3c3b326a5732de0e55c3b2156720e5effe41124df.png 3x
+              "
+              class="w-65 lg:w-81 mx-auto"
+              src="https://assets.splitwise.com/assets/home_page/fixtures/asset5-814c541b198b81fcf8ebe913f6a9731e6d3fe9840241ba3bb7274d15ce9cad95.png"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto mt-16 px-8">
+      <div class="flex flex-wrap md:-mx-2">
+        <div class="md:w-1/2 md:px-2 lg:w-1/3">
+          <a
+            href="https://www.ft.com/content/8ccd6f0e-18bb-11e9-b93e-f4351a53f1c3"
+            target="_blank"
+          >
+            <div
+              class="border border-grey-lightest shadow rounded pt-7.5 px-6 pb-4 w-full mb-4 h-small-card lg:h-lg-card flex-col flex justify-between external-link"
+            >
+              <p class="text-lg font-mont">
+                “Fundamental” for tracking finances. As good as WhatsApp for
+                containing awkwardness.
+              </p>
+              <div class="flex items-center h-12">
+                <img
+                  class="h-12 w-12 rounded mr-4"
+                  src="https://assets.splitwise.com/assets/home_page/logos/ft-152c170779821a7cff1ab468de0412defae4b4bcd1430bdd7cfc4901c8d338fc.png"
+                />
+                <span class="italic text-lg">Financial Times</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="md:w-1/2 md:px-2 lg:w-1/3">
+          <div
+            class="border border-grey-lightest shadow rounded pt-7.5 px-6 pb-4 w-full mb-4 h-small-card lg:h-lg-card flex-col flex justify-between external-link"
+          >
+            <p class="text-lg font-mont">
+              Life hack for group trips. Amazing tool to use when traveling with
+              friends! Makes life so easy!!
+            </p>
+            <div class="flex items-center h-12">
+              <span class="italic text-lg">Ahah S, iOS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:w-1/2 md:px-2 lg:w-1/3">
+          <a
+            href="https://www.nytimes.com/2018/08/28/smarter-living/money-finance-apps-tools.html"
+            target="_blank"
+          >
+            <div
+              class="border border-grey-lightest shadow rounded pt-7.5 px-6 pb-4 w-full mb-4 h-small-card lg:h-lg-card flex-col flex justify-between external-link"
+            >
+              <p class="text-lg font-mont">
+                Makes it easy to split everything from your dinner bill to rent.
+              </p>
+              <div class="flex items-center h-12">
+                <img
+                  class="h-12 w-12 rounded mr-4"
+                  src="https://assets.splitwise.com/assets/home_page/logos/nyt-68d17fe3b579e967803b3bfa086047106eb7c67ba2d64149f606457e2df5437c.png"
+                />
+                <span class="italic text-lg">NY Times</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="md:w-1/2 md:px-2 lg:w-1/3">
+          <div
+            class="border border-grey-lightest shadow rounded pt-7.5 px-6 pb-4 w-full mb-4 h-small-card lg:h-lg-card flex-col flex justify-between external-link"
+          >
+            <p class="text-lg font-mont">
+              So amazing to have this app manage balances and help keep money
+              out of relationships. love it!
+            </p>
+            <div class="flex items-center h-12">
+              <span class="italic text-lg">Haseena C, Android</span>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2 md:px-2 lg:w-1/3">
+          <a
+            href="https://www.businessinsider.com/best-apps-for-splitting-expenses-friends-2017-3"
+            target="_blank"
+          >
+            <div
+              class="border border-grey-lightest shadow rounded pt-7.5 px-6 pb-4 w-full mb-4 h-small-card lg:h-lg-card flex-col flex justify-between external-link"
+            >
+              <p class="text-lg font-mont">
+                I never fight with roommates over bills because of this genius
+                expense-splitting app
+              </p>
+              <div class="flex items-center h-12">
+                <img
+                  class="h-12 w-12 rounded mr-4"
+                  src="https://assets.splitwise.com/assets/home_page/logos/bi-97c1894e95b2a91c0027403ebda13eb65e2c5df8a303dd36e53cd0b013a0da9f.png"
+                />
+                <span class="italic text-lg">Business Insider</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="md:w-1/2 md:px-2 lg:w-1/3">
+          <div
+            class="border border-grey-lightest shadow rounded pt-7.5 px-6 pb-4 w-full mb-4 h-small-card lg:h-lg-card flex-col flex justify-between external-link"
+          >
+            <p class="text-lg font-mont">
+              I use it everyday. I use it for trips, roommates, loans. I love
+              splitwise.
+            </p>
+            <div class="flex items-center h-12">
+              <span class="italic text-lg">Trickseyus, iOS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-20">
+      <div
+        class="container mx-auto text-grey-light lg:flex lg:max-w-5xl px-8 text-left"
+      >
+        <div
+          class="flex w-full justify-between text-sm leading-tight lg:justify-start lg:leading-relaxed lg:pl-0"
+        >
+          <div class="lg:pr-8">
+            <p class="font-bold text-teal mb-1">Splitwise</p>
+            <ul class="text-grey-light leading-normal">
+              <li><a href="about.html">About</a></li>
+              <li><a href="press.html">Press</a></li>
+              <li><a href="https://blog.splitwise.com/">Blog</a></li>
+              <li><a href="jobs.html">Jobs</a></li>
+              <li><a href="calculators.html">Calculators</a></li>
+              <li><a href="https://dev.splitwise.com/">API</a></li>
+            </ul>
+          </div>
+          <div class="hidden lg:block border-r border-grey-lightest h-30"></div>
+          <div class="lg:px-8">
+            <p class="font-bold text-orange mb-1">Account</p>
+            <ul class="text-grey-light leading-normal">
+              <li><a href="login.hbs">Log in</a></li>
+              <li><a href="signup.hbs">Sign up</a></li>
+              <li><a href="password_reset.html">Reset password</a></li>
+              <li><a href="login.hbs">Settings</a></li>
+              <li><a href="subscriptions/new.html">Splitwise Pro</a></li>
+              <li>
+                <a href="pay.html"
+                  ><span
+                    class="translation_missing"
+                    title="translation missing: en.splitwise_pay"
+                    >Splitwise Pay</span
+                  ></a
+                >
+              </li>
+            </ul>
+
+        </div>
+      </div>
+    </footer>
+
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+      data-cf-beacon='{"rayId":"8d9b1253ed535994","version":"2024.10.4","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"d788d0b487f64a4c951cb13fb4a5fadd","b":1}'
+      crossorigin="anonymous"
+    ></script>
+  </body>
+
+  <!-- Mirrored from www.splitwise.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Oct 2024 12:54:14 GMT -->
+</html>

@@ -1,0 +1,141 @@
+/* Reset margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #1f4068;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container for all content */
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Flex container for centering form */
+.flex_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #16213e;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Logo */
+.envelope {
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+
+/* Heading */
+h2 {
+  font-size: 2rem;
+  color: #00b4d8;
+  text-shadow: 1px 1px 8px rgba(0, 180, 216, 0.7);
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-stacked input[type="text"],
+.form-stacked input[type="email"],
+.form-stacked input[type="password"] {
+  background-color: #16213e;
+  color: #f0f0f0;
+  border: 2px solid #373b3f;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus state for inputs */
+.form-stacked input[type="text"]:focus,
+.form-stacked input[type="email"]:focus,
+.form-stacked input[type="password"]:focus {
+  border-color: #00b4d8;
+  box-shadow: 0 0 8px rgba(0, 180, 216, 0.6);
+}
+
+/* Submit Button */
+.btn.btn-large {
+  background: linear-gradient(135deg, #00b4d8, #0096c7);
+  color: white;
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 180, 216, 0.6);
+}
+
+.btn.btn-large:hover {
+  background: linear-gradient(135deg, #0077b6, #00a3c4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 180, 216, 0.8);
+}
+
+/* Secondary Fields (hidden initially) */
+.secondary_fields {
+  display: none;
+}
+
+/* Animations for the secondary fields */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Show secondary fields */
+.secondary_fields.show {
+  animation: fadeIn 1s ease-in-out;
+  display: block;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  .flex_container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-stacked input[type="text"],
+  .form-stacked input[type="email"],
+  .form-stacked input[type="password"],
+  .btn.btn-large {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}

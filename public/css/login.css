@@ -1,0 +1,181 @@
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #1f4068;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  font-family: 'Montserrat', sans-serif;
+}
+
+header .logo a {
+  color: #00b4d8;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header a {
+  color: #f0f0f0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header a:hover {
+  color: #ff4d6d;
+}
+
+#guest {
+  display: flex;
+  gap: 20px;
+}
+
+/* Log In Link */
+#guest a.dropdown-reveal {
+  background: none;
+  padding: 8px 16px;
+  color: #00b4d8;
+  border: 2px solid #00b4d8;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#guest a.dropdown-reveal:hover {
+  background-color: #00b4d8;
+  color: #ffffff;
+  border-color: #00b4d8;
+}
+
+/* Sign Up Button */
+#guest a.sm-cta-button {
+  background: linear-gradient(135deg, #ff4d6d, #ff6b6b);
+  color: white;
+  padding: 8px 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(255, 77, 109, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+#guest a.sm-cta-button:hover {
+  background: linear-gradient(135deg, #ff4d6d, #ff4d6d);
+  box-shadow: 0 6px 15px rgba(255, 77, 109, 0.8);
+  transform: scale(1.05);
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  #guest {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Modal Box Styling */
+.modal_box {
+  background-color: #1f4068;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Form Heading */
+.modal_box .text-3xl {
+  font-size: 2.5rem;
+  color: #00b4d8;
+  text-shadow: 1px 1px 8px rgba(0, 180, 216, 0.7);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Form Styling */
+#login_form label {
+  display: block;
+  font-size: 1rem;
+  color: #f0f0f0;
+  margin-bottom: 5px;
+}
+
+.input {
+  margin-bottom: 20px;
+}
+
+input[type="email"],
+input[type="password"] {
+  background-color: #16213e;
+  color: #f0f0f0;
+  border: 2px solid #373b3f;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #00b4d8;
+  box-shadow: 0 0 8px rgba(0, 180, 216, 0.6);
+}
+
+/* CTA Button */
+.cta-button {
+  background: linear-gradient(135deg, #00b4d8, #0096c7);
+  color: white;
+  font-size: 1.1rem;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 180, 216, 0.6);
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #0077b6, #00a3c4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 180, 216, 0.8);
+}
+
+/* Forgot Password Link */
+a.text-teal-darker {
+  color: #00b4d8;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+a.text-teal-darker:hover {
+  color: #ff4d6d;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
