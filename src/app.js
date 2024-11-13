@@ -5,7 +5,7 @@ const hbs = require("hbs");
 require("./db/conn.js");
 const Register = require("./models/registers.js");
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3003;
 
 const static_path = path.join(__dirname, "../public");
 const templates_path = path.join(__dirname, "../templates/views");
