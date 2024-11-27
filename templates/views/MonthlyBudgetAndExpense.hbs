@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Budget and Expense</title>
+  <link rel="stylesheet" href="css/MonthlyBudgetAndExpense.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Manage Your Monthly Budget and Expenses</h1>
+    <p>Track your budget and expenses effectively!</p>
+    
+  </header>
+
+  <!-- Budget Section -->
+  <div class="card-container">
+    <!-- Budget Card -->
+    <div class="card">
+      <h2>Monthly Budget</h2>
+      <p id="budget-display">Set your budget to get started!</p>
+      <button id="add-budget-btn">Add Your Budget</button>
+    </div>
+
+    <!-- Expense Card -->
+    <div class="card">
+      <h2>Total Expenses</h2>
+      <p id="total-expense-display">$0.00</p>
+      <button id="expenses-btn">Expenses</button>
+    </div>
+
+    <!-- Remaining Balance Card -->
+    <div class="card">
+      <h2>Remaining Budget</h2>
+      <p id="remaining-budget-display">$0.00</p>
+    </div>
+  </div>
+
+  <!-- Modal for Adding Budget -->
+  <div class="modal" id="budget-modal">
+    <div class="modal-content">
+      <span class="close" id="close-budget-modal">&times;</span>
+      <h2>Add Your Budget</h2>
+      <input type="number" id="budget-input" placeholder="Enter budget amount">
+      <button id="save-budget-btn">Save Budget</button>
+    </div>
+  </div>
+
+  <!-- Modal for Adding Expenses -->
+  <div class="modal" id="expense-modal">
+    <div class="modal-content">
+      <span class="close" id="close-expense-modal">&times;</span>
+      <h2>Add an Expense</h2>
+      <input type="number" id="expense-amount" placeholder="Enter amount">
+      <input type="text" id="expense-description" placeholder="Enter description">
+      <input type="date" id="expense-date">
+      <button id="save-expense-btn">Save Expense</button>
+    </div>
+  </div>
+
+  <!-- Expense List Section -->
+  <div class="card-container">
+    <div class="card">
+      <h2>Expense List</h2>
+      <ul id="expense-list"></ul>
+    </div>
+  </div>
+
+  <script src="MonthlyBudgetAndExpense.js"></script>
+</body>
+</html>
